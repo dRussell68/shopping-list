@@ -35,4 +35,5 @@ Thanks to jsonpickle for simplifying JSON serialization.
 
 ## Author
 Derrek Russell
+
 Feel free to contribute to this project by creating issues or pull requests. If you encounter any bugs or have suggestions for improvements, please let me know!
