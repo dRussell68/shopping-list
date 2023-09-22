@@ -19,10 +19,10 @@ class ShoppingList:
             self.items[item] = {'amount': amount, 'price': price}
             print(f"{item} added\n")
         else:
-            update_choice = str(input("Item is already in the list, do you want to update the amount? (y/n): "))
-            if update_choice.lower() == "y":
+            update_choice = str(input("Item is already in the list, do you want to update the amount? (y/n): ")).lower()
+            if update_choice == "y":
                 self.alter_item_amount(item, amount)
-            elif update_choice.lower() == "n":
+            elif update_choice == "n":
                 print("Nothing updated\n")
             else:
                 print("Please enter 'y' or 'n'\n")
