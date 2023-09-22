@@ -85,7 +85,7 @@ def save_shopping_list_to_json_file(dict_of_shopping_lists, shopping_list_name, 
             print("\nSorry, please enter 'y' or 'n'\n")
 
 #main function to create or update and manage current shopping list
-def create_or_update_shopping_list(dict_of_shopping_lists, shopping_list=None, update='no'):
+def create_or_update_shopping_list(dict_of_shopping_lists, shopping_list=None, update='no', shopping_list_name=None):
     #if the user is not updating an existing list, create a new one
     if update == "no":
         shopping_list_name = str(input("Please enter a name for the new shopping list: ")).lower()
@@ -127,7 +127,7 @@ def update_shopping_list(dict_of_shopping_lists):
     list_name = input("Enter the name of the shopping list to update: ")
     if list_name in dict_of_shopping_lists:
         shopping_list = dict_of_shopping_lists[list_name]
-        create_or_update_shopping_list(dict_of_shopping_lists, shopping_list, "yes")
+        create_or_update_shopping_list(dict_of_shopping_lists, shopping_list, "yes", list_name)
     else:
         print("Shopping list not found\n")
 
@@ -221,7 +221,8 @@ def handle_choice(list_name, value):
             print("\nSorry, not a valid option\n")
     except ItemNotFoundError as e:
         print(e)
-
+        
+#main user interface
 def user_menu_main(dict_of_shopping_lists):
     while True:
         #main user menu
